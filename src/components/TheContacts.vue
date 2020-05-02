@@ -29,4 +29,12 @@
             letter-spacing: 7px;
         }
     }
+
+    @media only screen and (max-width: 800px) {
+        p {
+            font-size: 20px;
+            letter-spacing: 3px;
+        }
+    }
+
 </style>

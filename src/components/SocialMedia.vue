@@ -93,6 +93,17 @@
                 }
             }
         }
+
+        @media screen and (max-width: 800px) {
+            a {
+                width: 80px;
+                height: 80px;
+
+                svg {
+                    font-size: 35px;
+                }
+            }
+        }
     }
 
     @keyframes hover {

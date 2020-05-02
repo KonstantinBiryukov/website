@@ -14,12 +14,12 @@
                     <li>
                         <router-link to="/">About</router-link>
                     </li>
-                    <li>
-                        <router-link to="#">Projects</router-link>
-                    </li>
-                    <li>
-                        <router-link to="#">Skills</router-link>
-                    </li>
+                    <!--<li>-->
+                        <!--<router-link to="#">Projects</router-link>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<router-link to="#">Skills</router-link>-->
+                    <!--</li>-->
                     <li>
                         <router-link to="/portfolio">Portfolio</router-link>
                     </li>
@@ -99,9 +99,9 @@
         }
 
         .close {
-            position: absolute !important;
-            top: 40px !important;
-            right: 40px !important;
+            position: absolute;
+            top: 40px;
+            right: 40px;
         }
 
         .switcher:checked ~ nav {
@@ -125,7 +125,7 @@
             flex-direction: column;
 
             a {
-                padding: 20px;
+                padding: 10px !important;
 
                 &:hover {
                     background-color: rgba(255, 255, 255, .03);
