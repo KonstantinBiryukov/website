@@ -81,11 +81,8 @@
             <ProjectCard :name="`Phone Book`"
                          :mainImageLink="require(`@/server/portfolio/phone_book.png`)">
                 <template v-slot:description>
-                    <ul>
-                        <li>A CRUD web application that keeps track the list of phone contacts.</li>
-                        <li> - Built with all modern front-end techniques and material design concepts using nice
-                            Vuetify design.
-                        </li>
+                    <ul class="phone-book">
+                        <li>A CRUD SPA web application that keeps track the list of phone contacts.</li>
                         <li> - Leveraged Vue and Vuetify to create mobile-first responsive user interface.</li>
                         <li> - Built RPC-based architecture with and advanced filtration and validation using
                             Express.js.
@@ -248,6 +245,10 @@
         position: absolute;
         bottom: 0;
         right: 0;
+    }
+
+    .ui.card:last-child {
+        min-height: 500px;
     }
 
     @media only screen and (min-width: 1680px) {
