@@ -1,5 +1,5 @@
 <template>
-    <div class="black ui card">
+    <a class="black ui card" :href=headerLink>
         <div class="content up">
             <a class="header" target="_blank" :href=headerLink> {{ name }}</a>
         </div>
@@ -15,7 +15,7 @@
                 <button class="ui inverted red button">Check out the project</button>
             </a>
         </div>
-    </div>
+    </a>
 </template>
 
 <script>

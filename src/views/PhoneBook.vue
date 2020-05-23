@@ -18,12 +18,12 @@
         data() {
             return {
                 photos: [
-                    require('@/assets/phoneBook/5.png'),
-                    require('@/assets/phoneBook/6.png'),
-                    require('@/assets/phoneBook/1.png'),
-                    require('@/assets/phoneBook/2.png'),
-                    require('@/assets/phoneBook/3.png'),
-                    require('@/assets/phoneBook/4.png')
+                    require('@/server/phoneBook/5.png'),
+                    require('@/server/phoneBook/6.png'),
+                    require('@/server/phoneBook/1.png'),
+                    require('@/server/phoneBook/2.png'),
+                    require('@/server/phoneBook/3.png'),
+                    require('@/server/phoneBook/4.png')
                 ]
             }
         }

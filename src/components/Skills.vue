@@ -1,11 +1,11 @@
 <template>
     <div class="content">
         <h1>Key Skills</h1>
-        <img src="../assets/logos/vue.png" alt="Vue.js" class="logo">
-        <img src="../assets/logos/js.png" alt="Java" class="logo">
-        <img src="../assets/logos/html5.png" alt="HTML5" class="logo">
-        <img src="../assets/logos/css3.png" alt="CSS3" class="logo">
-        <img src="../assets/logos/java.png" alt="Java" class="logo">
+        <img src="../server/logos/vue.png" alt="Vue.js" class="logo">
+        <img src="../server/logos/js.png" alt="Java" class="logo">
+        <img src="../server/logos/html5.png" alt="HTML5" class="logo">
+        <img src="../server/logos/css3.png" alt="CSS3" class="logo">
+        <img src="../server/logos/java.png" alt="Java" class="logo">
     </div>
 </template>
 

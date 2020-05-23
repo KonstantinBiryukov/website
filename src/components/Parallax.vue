@@ -1,4 +1,5 @@
 <template>
+
     <div class="parallax">
         <header>
             <h1>Konstantin Biriukov</h1>
@@ -21,6 +22,7 @@
 </template>
 
 <script>
+
     export default {
         name: "Parallax"
     }
@@ -86,7 +88,7 @@
             position: absolute;
             min-height: 10vh;
             /*background-image: url("../assets/pexels-photo.jpeg");*/
-            background-image: url("../assets/background.jpg");
+            background-image: url("../server/background.jpg");
 
             background-repeat: no-repeat;
             background-size: cover;

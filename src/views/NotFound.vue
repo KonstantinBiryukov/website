@@ -37,7 +37,7 @@
             margin: 0;
             font-size: 170px;
             letter-spacing: 20px;
-            background: url("../assets/background.jpg");
+            background: url("../server/background.jpg");
             background-size: contain;
             -webkit-text-fill-color: transparent;
             -webkit-background-clip: text;

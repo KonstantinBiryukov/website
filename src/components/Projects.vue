@@ -5,8 +5,8 @@
 
             <ProjectCard :name="`Geo Jobs`"
                          :headerLink="`https://devpost.com/software/geojobs`"
-                         :mainImageLink="require(`@/assets/portfolio/geojobs2.png`)"
-                         :extraImageLink="require(`@/assets/portfolio/collins.png`)">
+                         :mainImageLink="require(`@/server/portfolio/geojobs2.png`)"
+                         :extraImageLink="require(`@/server/portfolio/collins.png`)">
                 <template v-slot:description>
                     <p> This service aggregates and visualizes data about job postings for different
                         technologies across the US. You are able to see where exactly in the US which programming
@@ -17,8 +17,8 @@
 
             <ProjectCard :name="`Game of grants`"
                          :headerLink="`https://devpost.com/software/gameofgrants`"
-                         :mainImageLink="require(`@/assets/portfolio/gameOfGrants.png`)"
-                         :extraImageLink="require(`@/assets/portfolio/mit_winner.png`)">
+                         :mainImageLink="require(`@/server/portfolio/gameOfGrants.png`)"
+                         :extraImageLink="require(`@/server/portfolio/mit_winner.png`)">
                 <template v-slot:description>
                     <ul>
                         <li> Some investors raised a good amount of money in cryptocurrency and sometimes they want to
@@ -40,7 +40,7 @@
 
             <ProjectCard :name="`FAAN(G) Jobs Locations`"
                          :headerLink="`https://konstantinbiryukov.github.io/geo_jobs/`"
-                         :mainImageLink="require(`@/assets/portfolio/faang.png`)">
+                         :mainImageLink="require(`@/server/portfolio/faang.png`)">
                 <template v-slot:description>
                     <ul>
                         <li> This project demonstrates where exactly in the US software developer jobs that such
@@ -59,8 +59,27 @@
                 </template>
             </ProjectCard>
 
+            <ProjectCard :name="`'The Last of Us' Map`"
+                         :headerLink="`https://konstantinbiryukov.github.io/last-of-us-map/`"
+                         :mainImageLink="require(`@/server/portfolio/last_of_us.png`)">
+                <template v-slot:description>
+                    <ul>
+                        <li>'The Last of Us' interactive map experience`</li>
+                        <li> There're 2 modes:</li>
+                        <li> I. "Follow The Last of Us Path" Mode will guide you through the route that Joel and Ellie
+                            has followed throughout the game. Just sit and enjoy their path recalling bygone events.
+                        </li>
+                        <li> II. Interactive Map Mode will show you the locations which took place in the game. Click
+                            on the location markers to check out card-descriptions which let you refresh your memory.
+                        </li>
+                        <li> * Made with Vue (+Vuex, VueRouter, VueFlux), Mapbox-gl.js, Howler.js</li>
+                    </ul>
+
+                </template>
+            </ProjectCard>
+
             <ProjectCard :name="`Phone Book`"
-                         :mainImageLink="require(`@/assets/portfolio/phone_book.png`)">
+                         :mainImageLink="require(`@/server/portfolio/phone_book.png`)">
                 <template v-slot:description>
                     <ul>
                         <li>A CRUD web application that keeps track the list of phone contacts.</li>
@@ -81,6 +100,8 @@
 
                 </template>
             </ProjectCard>
+
+
 
 
             <!--<div class="black ui card" @click="transition">-->
