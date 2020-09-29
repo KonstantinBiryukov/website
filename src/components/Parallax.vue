@@ -12,7 +12,7 @@
             <br>
             <button class="download">
                 <a class="download-link" target="_blank"
-                   href="https://drive.google.com/drive/u/0/folders/1mU0KDBeuPwdLCl0qLDsJYnH103w-ZCSZ">
+                   href="https://drive.google.com/open?id=18n7UuuJXfxGaInVcysXLfDG5wGEfV9cR">
                     <font-awesome-icon class="icon-download" :icon="['fa', 'download']"></font-awesome-icon>
                     Download resume
                 </a>
