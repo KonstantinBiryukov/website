@@ -70,6 +70,10 @@
         margin-top: 0;
     }
 
+    .ui.card, .ui.cards>.card {
+      width: 400px;
+    }
+
     @media only screen and (min-width: 1680px) {
         .content, .header, .description {
             font-size: 32px !important;

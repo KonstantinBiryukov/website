@@ -49,4 +49,10 @@
     .fade-leave-to {
         opacity: 0;
     }
+
+    @media only screen and (min-width: 1680px) {
+      .card a.header {
+        font-size: 30px !important;
+      }
+    }
 </style>
