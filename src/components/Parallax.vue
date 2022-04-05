@@ -3,16 +3,17 @@
     <div class="parallax">
         <header>
             <h1>Konstantin Biriukov</h1>
-            <!--<p>This is my website. Welcome. Check out my portfolio </p>-->
         </header>
         <p class="content">
-            I am a passionate software developer who is specialized in front-end development. I am currently studying
-            in Saint Cloud State University (Minnesota) pursuing Master Degree as a Fulbright scholar.
-            Check out my portfolio and contact me if you have any questions.
+          I am a passionate software developer who specialize in front-end development.
+          I also have a professional knowledge of Cartographic JS APIs.
+          I have graduated from Saint Cloud State University (Minnesota) with a
+          <a href="https://repository.stcloudstate.edu/gp_etds/10/" target="_blank">Master's Degree</a> as a Fulbright scholar.
+          Check out my portfolio and contact me if you have any questions.
             <br>
             <button class="download">
                 <a class="download-link" target="_blank"
-                   href="https://drive.google.com/open?id=18n7UuuJXfxGaInVcysXLfDG5wGEfV9cR">
+                   href="https://drive.google.com/file/d/1AauAhjBg-4sR1A3H4UQnF-VsTR7llS0e">
                     <font-awesome-icon class="icon-download" :icon="['fa', 'download']"></font-awesome-icon>
                     Download resume
                 </a>
