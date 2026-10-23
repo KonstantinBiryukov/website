@@ -16,6 +16,7 @@
     "test": "vitest run",
     "check": "npm run lint && npm run test && npm run build",
     "optimize:images": "node scripts/optimize-images.mjs",
+    "icons": "node scripts/make-icons.mjs",
     "deploy": "node scripts/deploy-gh-pages.mjs"
   },
   "dependencies": {

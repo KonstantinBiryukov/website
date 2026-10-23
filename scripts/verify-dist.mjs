@@ -45,7 +45,7 @@ const LEGACY_FILES = [
   'img/vue.82b9c7a5.png',
 ];
 
-const REQUIRED_FILES = ['index.html', '.nojekyll', '404.html', 'favicon.svg', 'og.png', 'robots.txt', 'sitemap.xml'];
+const REQUIRED_FILES = ['index.html', '.nojekyll', '404.html', 'favicon.svg', 'apple-touch-icon.png', 'og.png', 'robots.txt', 'sitemap.xml'];
 
 // 1 — Base path of every src/href in index.html.
 const html = readFileSync(join(DIST, 'index.html'), 'utf8');

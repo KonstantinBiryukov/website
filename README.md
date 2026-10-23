@@ -22,6 +22,7 @@ npm run dev        # http://localhost:5173/website/
 | `npm run lint` | ESLint (type-aware TypeScript + React hooks rules) |
 | `npm run check` | lint + tests + build — run before every deploy |
 | `npm run optimize:images` | Regenerate WebP images and `og.png` from `media/originals/` |
+| `npm run icons` | Regenerate the "KB" favicon set (`favicon.svg`, `favicon.ico`, `apple-touch-icon.png`) |
 | `npm run deploy` | Build, verify and publish to `gh-pages` (asks before pushing; `-- --dry-run` to rehearse) |
 
 ## Deploying

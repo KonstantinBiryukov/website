@@ -1,9 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <!-- Contour rings + a survey point: the site's mark. -->
-  <rect width="32" height="32" rx="6" fill="#0b0e0d"/>
-  <g fill="none" stroke="#8fa89a" stroke-width="1.4">
-    <ellipse cx="16" cy="16" rx="12" ry="10"/>
-    <ellipse cx="16.5" cy="15.5" rx="8" ry="6.4"/>
-  </g>
-  <circle cx="17" cy="15" r="3" fill="#ff5a1f"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#ff6b4a"/>
+  <text x="32" y="46" text-anchor="middle" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-weight="700" font-size="37" letter-spacing="-2" fill="#0b1024">KB</text>
 </svg>
