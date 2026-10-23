@@ -1,0 +1,236 @@
+/* ── Featured projects: two compact cards side by side ───────────────── */
+.featured {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  padding: 0;
+  list-style: none;
+}
+
+@media (max-width: 700px) {
+  .featured {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ── "Other projects" folder ─────────────────────────────────────────── */
+.folder {
+  margin-top: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+
+.folder[open] {
+  border-color: var(--line-2);
+}
+
+.folderSummary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 64px;
+  padding: 0 20px;
+  border-radius: var(--radius);
+  color: var(--amber);
+  cursor: pointer;
+  list-style: none; /* hide the default disclosure triangle */
+}
+
+.folderSummary::-webkit-details-marker {
+  display: none;
+}
+
+.folderSummary:hover {
+  background: rgb(255 255 255 / 0.04);
+}
+
+.folderTitle {
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.folderCount {
+  display: grid;
+  place-items: center;
+  min-width: 26px;
+  height: 26px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--amber) 20%, transparent);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.folderChevron {
+  margin-left: auto;
+  color: var(--text-3);
+  transition: transform var(--duration) var(--ease-out);
+}
+
+.folder[open] .folderChevron {
+  transform: rotate(180deg);
+}
+
+/* Inside the folder: small cards, four in a row on desktop. */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  padding: 4px 14px 14px;
+  list-style: none;
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 4px 10px 10px;
+  }
+}
+
+/* ── Tiles ───────────────────────────────────────────────────────────── */
+.tile {
+  --tone: var(--coral);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  transition:
+    transform var(--duration) var(--ease-out),
+    border-color var(--duration) var(--ease-out);
+}
+
+/* Each tile gets a colour from the palette (accent edge, placeholder). */
+.tile[data-tone='1'] {
+  --tone: var(--amber);
+}
+.tile[data-tone='2'] {
+  --tone: var(--teal);
+}
+.tile[data-tone='3'] {
+  --tone: var(--violet);
+}
+.tile[data-tone='4'] {
+  --tone: var(--lime);
+}
+
+.tile:hover {
+  transform: translateY(-4px);
+  border-color: var(--tone);
+}
+
+/* Tiles inside the folder sit on the folder's panel: a touch darker. */
+.grid .tile {
+  background: rgb(9 13 32 / 0.7);
+}
+
+/* Deep-linked tile is outlined in its colour. */
+.tile[data-highlight='true'] {
+  border-color: var(--tone);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--tone) 45%, transparent);
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  object-position: top left;
+  border-bottom: 3px solid var(--tone);
+}
+
+.placeholder {
+  aspect-ratio: 2 / 1;
+  border-bottom: 3px solid var(--tone);
+  background:
+    repeating-radial-gradient(circle at 30% 60%, transparent 0 14px, color-mix(in srgb, var(--tone) 45%, transparent) 14px 15px),
+    color-mix(in srgb, var(--tone) 12%, var(--panel-solid));
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 14px 14px;
+}
+
+/* Links sit at the bottom so cards in a row line up. */
+.body .links {
+  margin-top: auto;
+  padding-top: 4px;
+}
+
+.meta {
+  display: flex;
+  gap: 10px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tone);
+}
+
+.title {
+  font-size: 0.98rem;
+}
+
+/* Small cards in the folder get slightly smaller type. */
+.grid .title {
+  font-size: 0.88rem;
+}
+
+.line {
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--text-2);
+}
+
+.grid .line {
+  font-size: 0.84rem;
+}
+
+.award {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--amber);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0;
+  list-style: none;
+}
+
+.tags li {
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.07);
+  font-size: 0.72rem;
+  color: var(--text-2);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Compact link pills inside cards. */
+.links a {
+  min-height: 32px;
+  padding: 0 11px;
+  font-size: 0.8rem;
+}

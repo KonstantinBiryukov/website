@@ -1,0 +1,242 @@
+/*
+ * Global design tokens and base styles.
+ *
+ * Direction: a colourful topographic map at night behind short, bold,
+ * friendly text. Navy ground, white type, one accent colour per tab
+ * (`--accent`, set from <html data-tab>), Outfit for display and
+ * Manrope for text. Component styles live in CSS Modules.
+ *
+ * Contrast on --panel/--bg: --text 15:1, --text-2 9:1, --text-3 5.4:1;
+ * every accent ≥ 7:1 on --bg (all pass WCAG AA).
+ */
+
+:root {
+  color-scheme: dark;
+
+  /* ── Colour ─────────────────────────────────────────────────────────── */
+  --bg: #0b1024;
+  --panel: rgb(13 19 44 / 0.86);
+  --panel-solid: #121a3a;
+  --text: #f4f5ff;
+  --text-2: #c3c7e6;
+  --text-3: #9298c4;
+  --line: rgb(255 255 255 / 0.1);
+  --line-2: rgb(255 255 255 / 0.2);
+
+  /* Tab accents. --accent follows the active tab. */
+  --coral: #ff6b4a;
+  --amber: #ffb547;
+  --teal: #3dd6b5;
+  --violet: #a594ff;
+  --lime: #c9e265;
+  --sky: #6cb8ff;
+  --accent: var(--coral);
+
+  /* ── Type ───────────────────────────────────────────────────────────── */
+  --font-display: 'Outfit', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-sans: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* ── Space & layout ─────────────────────────────────────────────────── */
+  --gutter: clamp(16px, 4vw, 48px);
+  --max-width: 1180px;
+  --header-height: 72px;
+  --radius: 18px;
+
+  /* ── Motion ─────────────────────────────────────────────────────────── */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.1, 1);
+  --duration: 200ms;
+}
+
+/* The accent follows the tab (set by App on <html>). */
+:root[data-tab='portfolio'] {
+  --accent: var(--amber);
+}
+:root[data-tab='experience'] {
+  --accent: var(--teal);
+}
+:root[data-tab='skills'] {
+  --accent: var(--violet);
+}
+:root[data-tab='contacts'] {
+  --accent: var(--lime);
+}
+
+/* ── Reset (modern, minimal) ──────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--header-height) + 16px);
+  background: var(--bg);
+}
+
+body {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: transparent; /* the map backdrop shows through */
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+img,
+svg,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+input,
+button {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Display type: Outfit 600 (700 is reserved for the name). */
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* One consistent, highly visible focus ring. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Programmatic focus targets (views, items) are not interactive. */
+[tabindex='-1']:focus {
+  outline: none;
+}
+
+/* ── Utilities ────────────────────────────────────────────────────────── */
+
+.shell {
+  width: 100%;
+  max-width: calc(var(--max-width) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip link: hidden until focused with the keyboard. */
+.skip-link:focus-visible {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 100;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 10px 16px;
+  clip-path: none;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* A view entering after a tab switch; its direct children stagger in. */
+@media (prefers-reduced-motion: no-preference) {
+  .view-enter > * {
+    animation: view-enter 460ms var(--ease-out) both;
+  }
+
+  .view-enter > :nth-child(2) {
+    animation-delay: 50ms;
+  }
+  .view-enter > :nth-child(3) {
+    animation-delay: 100ms;
+  }
+  .view-enter > :nth-child(n + 4) {
+    animation-delay: 150ms;
+  }
+}
+
+@keyframes view-enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* <main> fills the space between header and footer, so short views
+   (About, Contacts) can centre their content vertically. */
+main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+main:focus {
+  outline: none;
+}

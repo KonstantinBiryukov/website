@@ -1,0 +1,74 @@
+.groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 14px;
+  padding: 0;
+  list-style: none;
+}
+
+.group {
+  --tone: var(--coral);
+  padding: 18px 20px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  transition:
+    border-color var(--duration) var(--ease-out),
+    transform var(--duration) var(--ease-out);
+}
+
+.group:hover {
+  border-color: var(--tone);
+  transform: translateY(-3px);
+}
+
+.group[data-tone='1'] {
+  --tone: var(--amber);
+}
+.group[data-tone='2'] {
+  --tone: var(--teal);
+}
+.group[data-tone='3'] {
+  --tone: var(--violet);
+}
+.group[data-tone='4'] {
+  --tone: var(--lime);
+}
+.group[data-tone='5'] {
+  --tone: #6cb8ff;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  color: var(--tone);
+}
+
+/* Legend swatch: a tiny hatched square, like a map layer key. */
+.swatch {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--tone);
+  border-radius: 4px;
+  background: repeating-linear-gradient(45deg, var(--tone) 0 2px, transparent 2px 5px);
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 0;
+  list-style: none;
+}
+
+.skills li {
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--tone) 14%, transparent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}

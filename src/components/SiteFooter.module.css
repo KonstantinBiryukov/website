@@ -1,0 +1,22 @@
+.footer {
+  padding-block: 28px 20px;
+  /* Fades in from transparent so the text reads over the map. */
+  background: linear-gradient(0deg, rgb(11 16 36 / 0.9), rgb(11 16 36 / 0));
+  font-size: 0.8rem;
+  color: var(--text-3);
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 24px;
+}
+
+.inner a {
+  color: var(--text-2);
+}
+
+.inner a:hover {
+  color: var(--accent);
+}

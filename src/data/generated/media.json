@@ -1,0 +1,49 @@
+{
+  "lou-bus-depot": {
+    "width": 2000,
+    "height": 1069,
+    "widths": [
+      800,
+      1600
+    ]
+  },
+  "book-cover": {
+    "width": 1000,
+    "height": 1491,
+    "widths": [
+      240,
+      480
+    ]
+  },
+  "storytelling": {
+    "width": 2560,
+    "height": 1372,
+    "widths": [
+      800,
+      1600
+    ]
+  },
+  "faang": {
+    "width": 1880,
+    "height": 1268,
+    "widths": [
+      800,
+      1600
+    ]
+  },
+  "geojobs": {
+    "width": 2290,
+    "height": 1122,
+    "widths": [
+      800,
+      1600
+    ]
+  },
+  "game-of-grants": {
+    "width": 540,
+    "height": 366,
+    "widths": [
+      540
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <!-- Paint the dark ground before any CSS arrives: no white flash. -->
+    <style>
+      html { background: #0b1024; color-scheme: dark; }
+    </style>
+
+    <title>Konstantin Biriukov — Software engineer · maps, 3D &amp; games</title>
+    <meta
+      name="description"
+      content="Software engineer building interactive maps and real-time graphics for the web — and now games at Naughty Dog. Projects, experience, skills and the book Interactive Storytelling Maps Classification."
+    />
+    <meta name="author" content="Konstantin Biriukov" />
+    <meta name="theme-color" content="#0b1024" />
+    <link rel="canonical" href="https://konstantinbiryukov.github.io/website/" />
+
+    <!-- %BASE_URL% is replaced by Vite with "/website/" (see vite.config.ts). -->
+    <link rel="icon" href="%BASE_URL%favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="%BASE_URL%favicon.ico" sizes="any" />
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Konstantin Biriukov" />
+    <meta property="og:title" content="Konstantin Biriukov — Software engineer · maps, 3D & games" />
+    <meta
+      property="og:description"
+      content="Interactive maps, real-time graphics and games — projects, experience and the book Interactive Storytelling Maps Classification."
+    />
+    <meta property="og:url" content="https://konstantinbiryukov.github.io/website/" />
+    <meta property="og:image" content="https://konstantinbiryukov.github.io/website/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Konstantin Biriukov — software engineer, maps, 3D and games — over colourful contour lines." />
+    <meta property="profile:first_name" content="Konstantin" />
+    <meta property="profile:last_name" content="Biriukov" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Structured data: only facts verified from the résumé and public profiles. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Konstantin Biriukov",
+        "url": "https://konstantinbiryukov.github.io/website/",
+        "jobTitle": "Software Engineer",
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "St. Cloud State University" },
+        "knowsAbout": ["Web mapping", "Mapbox GL JS", "Leaflet", "WebGL", "Three.js", "React", "TypeScript"],
+        "sameAs": [
+          "https://www.linkedin.com/in/konstantin-biriukov/",
+          "https://github.com/KonstantinBiryukov",
+          "https://scholar.google.com/citations?user=z6AKyKcAAAAJ"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- Without JavaScript the essentials are still here. -->
+    <noscript>
+      <div style="max-width: 40rem; margin: 4rem auto; padding: 0 1rem; font-family: system-ui, sans-serif; line-height: 1.6; color: #f4f5ff">
+        <h1>Konstantin Biriukov</h1>
+        <p>Software engineer · maps, 3D &amp; games. Interactive maps and real-time graphics for the web — and now games at Naughty Dog.</p>
+        <ul>
+          <li><a style="color: #ff6b4a" href="https://www.linkedin.com/in/konstantin-biriukov/">LinkedIn</a></li>
+          <li><a style="color: #ff6b4a" href="https://github.com/KonstantinBiryukov">GitHub</a></li>
+          <li><a style="color: #ff6b4a" href="https://scholar.google.com/citations?user=z6AKyKcAAAAJ&amp;hl=en">Google Scholar</a></li>
+          <li><a style="color: #ff6b4a" href="https://www.amazon.com/Interactive-Storytelling-Maps-Classification-Development/dp/1735962902">Book: Interactive Storytelling Maps Classification</a></li>
+          <li><a style="color: #ff6b4a" href="https://konstantinbiryukov.github.io/last-of-us-map/">The Last of Us — The Journey (interactive map)</a></li>
+          <li><a style="color: #ff6b4a" href="mailto:kostya.igm@gmail.com">kostya.igm@gmail.com</a></li>
+        </ul>
+        <p>Enable JavaScript to see the full portfolio.</p>
+      </div>
+    </noscript>
+
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

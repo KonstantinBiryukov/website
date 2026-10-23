@@ -1,0 +1,61 @@
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  transition:
+    color var(--duration) var(--ease-out),
+    background-color var(--duration) var(--ease-out),
+    border-color var(--duration) var(--ease-out);
+}
+
+.icon {
+  flex: none;
+  transition: transform var(--duration) var(--ease-out);
+}
+
+.link:hover .icon {
+  transform: translate(2px, -2px);
+}
+
+/* Inline: underlined text link that takes the accent colour on hover. */
+.inline {
+  text-decoration: underline;
+  text-decoration-color: var(--line-2);
+  text-underline-offset: 0.2em;
+}
+
+.inline:hover {
+  color: var(--accent);
+  text-decoration-color: currentColor;
+}
+
+/* Action: a compact pill. */
+.action {
+  min-height: 36px;
+  padding: 0 14px;
+  border: 1px solid var(--line-2);
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.action:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Primary: the one filled call to action. */
+.primary {
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.primary:hover {
+  filter: brightness(1.1);
+}

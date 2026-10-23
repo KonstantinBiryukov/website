@@ -1,0 +1,132 @@
+/* Section on the Portfolio page, below the projects. */
+.section {
+  margin-top: clamp(40px, 6vh, 64px);
+}
+
+/* Same look as the page title, one level down. */
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  font-size: clamp(1.3rem, 1.1rem + 1vw, 1.8rem);
+}
+
+.heading::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--sky);
+}
+
+.list {
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  --tone: var(--sky);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  transition:
+    border-color var(--duration) var(--ease-out),
+    transform var(--duration) var(--ease-out);
+}
+
+.item:hover {
+  border-color: var(--tone);
+  transform: translateY(-3px);
+}
+
+.item[data-kind='Book'] {
+  --tone: var(--coral);
+}
+.item[data-kind='Thesis'] {
+  --tone: var(--violet);
+}
+.item[data-kind='Talk'] {
+  --tone: var(--teal);
+}
+
+/* Deep-linked item (#/publications/<id>). */
+.item[data-highlight='true'] {
+  border-color: var(--tone);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--tone) 45%, transparent);
+}
+
+.cover {
+  flex: none;
+  width: 72px;
+  border-radius: 4px;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.45);
+}
+
+.icon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--tone) 18%, transparent);
+  color: var(--tone);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.meta {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tone);
+}
+
+.title {
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.venue {
+  font-size: 0.92rem;
+  color: var(--text-2);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.more {
+  margin-top: 20px;
+}
+
+@media (max-width: 520px) {
+  .item {
+    align-items: flex-start;
+  }
+
+  .cover,
+  .icon {
+    width: 52px;
+  }
+
+  .icon {
+    height: 52px;
+  }
+}

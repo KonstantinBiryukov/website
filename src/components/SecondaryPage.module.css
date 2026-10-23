@@ -1,0 +1,28 @@
+/* Layout of the 404 view. */
+.page {
+  flex: 1;
+  padding-top: clamp(24px, 5vh, 56px);
+  padding-bottom: clamp(48px, 8vh, 96px);
+}
+
+.title {
+  margin-top: 20px;
+  font-size: clamp(2rem, 1.4rem + 3vw, 3.6rem);
+}
+
+.lede {
+  max-width: 40rem;
+  margin-top: 14px;
+  font-size: 1.1rem;
+  color: var(--text-2);
+}
+
+.lede code {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  word-break: break-all;
+}
+
+.actions {
+  margin-top: 28px;
+}

@@ -1,0 +1,42 @@
+.lede {
+  font-size: clamp(1.05rem, 1rem + 0.5vw, 1.35rem);
+  color: var(--text);
+  text-shadow: 0 1px 14px rgb(11 16 36 / 0.95);
+}
+
+/* All five buttons in one row on desktop; they wrap on narrower screens. */
+.profiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px;
+  margin-top: 28px;
+  padding: 0;
+  list-style: none;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 60px;
+  padding: 0 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  font-weight: 600;
+  white-space: nowrap;
+  text-decoration: none;
+  transition:
+    border-color var(--duration) var(--ease-out),
+    transform var(--duration) var(--ease-out);
+}
+
+.profile:hover {
+  border-color: var(--lime);
+  transform: translateY(-3px);
+}
+
+.arrow {
+  margin-left: auto;
+  color: var(--text-3);
+}

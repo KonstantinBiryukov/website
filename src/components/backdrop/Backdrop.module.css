@@ -1,0 +1,64 @@
+/* Fixed, full-viewport, behind everything. */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Static colour backdrop: instant first paint and the no-WebGL fallback.
+   Soft hypsometric blobs plus contour rings, all CSS. */
+.fallback {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-radial-gradient(ellipse 120% 90% at 70% 45%, transparent 0 28px, rgb(255 255 255 / 0.07) 28px 29px),
+    radial-gradient(ellipse 45% 40% at 72% 38%, rgb(168 74 56 / 0.55), transparent 70%),
+    radial-gradient(ellipse 60% 55% at 60% 60%, rgb(46 96 59 / 0.6), transparent 72%),
+    radial-gradient(ellipse 80% 70% at 30% 70%, rgb(14 77 82 / 0.7), transparent 75%),
+    var(--bg);
+}
+
+/* Live map: fades in over the fallback once the first frame is drawn. */
+.live {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s var(--ease-out);
+}
+
+.live[data-live='true'] {
+  opacity: 1;
+}
+
+.canvasHost,
+.canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* About tab: darkens the map behind the text column, fades towards the
+   right so the colourful terrain stays the star. Full-width on phones. */
+.veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgb(11 16 36 / 0.78) 0%, rgb(11 16 36 / 0.5) 45%, rgb(11 16 36 / 0) 75%);
+}
+
+@media (max-width: 760px) {
+  .veil {
+    background: rgb(11 16 36 / 0.55);
+  }
+}
+
+/* Coordinates under the pointer (About tab), top-right under the header. */
+.readout {
+  position: absolute;
+  top: calc(var(--header-height) + 8px);
+  right: var(--gutter);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+  color: rgb(255 255 255 / 0.7);
+}

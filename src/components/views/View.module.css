@@ -1,0 +1,23 @@
+.view {
+  flex: 1;
+  padding-top: clamp(24px, 5vh, 56px);
+  padding-bottom: clamp(48px, 8vh, 96px);
+}
+
+/* Tab title: short, bold, with an accent-coloured dot. */
+.title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: clamp(24px, 4vh, 40px);
+  font-size: clamp(1.6rem, 1.2rem + 1.8vw, 2.6rem);
+}
+
+.title::before {
+  content: '';
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 25%, transparent);
+}

@@ -1,0 +1,187 @@
+.about {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(28px, 5vh, 48px);
+  padding-block: clamp(32px, 7vh, 80px);
+}
+
+.intro {
+  max-width: 40rem;
+}
+
+.name {
+  font-weight: 700;
+  font-size: clamp(2.6rem, 1.4rem + 6vw, 6rem);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  /* Readable over any part of the map. */
+  text-shadow: 0 2px 30px rgb(11 16 36 / 0.6);
+}
+
+.tagline {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.text {
+  margin-top: 18px;
+  font-size: clamp(1.05rem, 1rem + 0.4vw, 1.3rem);
+  color: var(--text);
+  text-shadow: 0 1px 16px rgb(11 16 36 / 0.9);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid var(--line-2);
+  border-radius: 999px;
+  background: var(--panel);
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    border-color var(--duration) var(--ease-out),
+    transform var(--duration) var(--ease-out);
+}
+
+.link:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Badges: small coloured pills, cycling through the palette. */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.badges li {
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--panel);
+  border: 1px solid currentColor;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.badges li:nth-child(5n + 1) {
+  color: var(--coral);
+}
+.badges li:nth-child(5n + 2) {
+  color: var(--amber);
+}
+.badges li:nth-child(5n + 3) {
+  color: var(--teal);
+}
+.badges li:nth-child(5n + 4) {
+  color: var(--violet);
+}
+.badges li:nth-child(5n + 5) {
+  color: var(--lime);
+}
+
+/* Featured: three compact cards. */
+.featured {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  text-decoration: none;
+  transition:
+    border-color var(--duration) var(--ease-out),
+    transform var(--duration) var(--ease-out);
+}
+
+.card:hover {
+  border-color: var(--line-2);
+  transform: translateY(-3px);
+}
+
+.cover {
+  flex: none;
+  width: 52px;
+  border-radius: 4px;
+  box-shadow: 0 6px 16px rgb(0 0 0 / 0.4);
+}
+
+.cardIcon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+}
+
+.card[data-kind='Interview'] .cardIcon {
+  background: color-mix(in srgb, var(--teal) 20%, transparent);
+  color: var(--teal);
+}
+
+.card[data-kind='Article'] .cardIcon {
+  background: color-mix(in srgb, var(--violet) 20%, transparent);
+  color: var(--violet);
+}
+
+.cardText {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.cardKind {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.cardTitle {
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.cardSource {
+  font-size: 0.82rem;
+  color: var(--text-3);
+}
+
+.cardArrow {
+  flex: none;
+  color: var(--text-3);
+}

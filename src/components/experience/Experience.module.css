@@ -1,0 +1,161 @@
+.layout {
+  display: grid;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (min-width: 980px) {
+  .layout {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .chart {
+    position: sticky;
+    top: calc(var(--header-height) + 16px);
+  }
+}
+
+/* ── Route chart ─────────────────────────────────────────────────────── */
+
+.chart {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+  font-family: var(--font-mono);
+}
+
+.graticule line {
+  stroke: var(--line);
+  stroke-width: 1;
+}
+
+.graticule text {
+  fill: var(--text-3);
+  font-size: 10px;
+}
+
+.route {
+  fill: none;
+  stroke: var(--teal);
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+/* The route draws itself when the tab opens. */
+@media (prefers-reduced-motion: no-preference) {
+  .route {
+    stroke-dasharray: 1;
+    animation: draw 1.4s 0.2s var(--ease-out) both;
+  }
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.stopRing {
+  fill: var(--panel-solid);
+  stroke: var(--text);
+  stroke-width: 1.5;
+}
+
+.stopDot {
+  fill: var(--text);
+}
+
+.stop[data-active='true'] .stopRing {
+  stroke: var(--amber);
+  fill: color-mix(in srgb, var(--amber) 25%, var(--panel-solid));
+}
+
+.stopLabel {
+  fill: var(--text-2);
+  font-size: 11px;
+  paint-order: stroke;
+  stroke: var(--panel-solid);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.stopLabel[data-active='true'] {
+  fill: var(--amber);
+}
+
+/* ── Timeline ─────────────────────────────────────────────────────────── */
+
+.roles {
+  display: grid;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.role {
+  position: relative;
+  padding: 14px 18px 14px 22px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+  transition: border-color var(--duration) var(--ease-out);
+}
+
+/* Coloured spine on the left edge. */
+.role::before {
+  content: '';
+  position: absolute;
+  inset: 14px auto 14px 0;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--teal);
+}
+
+.role:first-child::before {
+  background: var(--coral);
+}
+
+.school::before {
+  background: var(--violet);
+}
+
+.role[data-active='true'] {
+  border-color: var(--amber);
+}
+
+.when {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-3);
+}
+
+.duration {
+  font-weight: 400;
+}
+
+.company {
+  margin-top: 4px;
+  font-size: 1rem;
+}
+
+.title {
+  font-weight: 600;
+  color: var(--text-2);
+}
+
+.line {
+  margin-top: 4px;
+  font-size: 0.92rem;
+  color: var(--text-2);
+}
