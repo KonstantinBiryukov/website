@@ -1,0 +1,28 @@
+<!doctype html>
+<!--
+  GitHub Pages serves this file for any unknown path under /website/.
+  The site uses hash routes (/website/#/portfolio), so a path such as
+  /website/portfolio was never valid — but people type it. Forward to the
+  equivalent hash route instead of showing a dead end.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting…</title>
+    <meta name="robots" content="noindex" />
+    <script>
+      (function () {
+        var base = '/website/';
+        var path = window.location.pathname;
+        var rest = path.indexOf(base) === 0 ? path.slice(base.length) : '';
+        // Drop a bare index.html and trailing slashes. The app's router shows
+        // its own "not found" view if the result is still not a known route.
+        rest = rest.replace(/^index\.html$/, '').replace(/\/+$/, '');
+        window.location.replace(base + '#/' + rest);
+      })();
+    </script>
+  </head>
+  <body style="background: #0b0e0d; color: #ece8de; font-family: system-ui, sans-serif">
+    <p><a style="color: #ff5a1f" href="/website/">Continue to the site</a></p>
+  </body>
+</html>
